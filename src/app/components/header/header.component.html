@@ -1,0 +1,15 @@
+<nav>
+  <ul>
+    <li *ngFor="let item of listNav">
+      <a class="nav-items" [href]="item">{{ item }}</a>
+    </li>
+  </ul>
+  <a href="#"><img [src]="safeReturnUrl" alt="Retornar a home" /></a>
+  <div id="shop-container">
+    <div class="dollar-container">
+      <h1>$</h1>
+      <img [src]="safeVectorUrl" alt="vector" />
+    </div>
+    <img class="emptyCart" [src]="safeEmptyCartUrl" alt="empty cart" />
+  </div>
+</nav>
