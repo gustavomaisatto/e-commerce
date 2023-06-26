@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Roupa de frio",
+    "preco": 50.0,
+    "link": "../../../assets/roupa1.png"
+  },
+  {
+    "name": "Apollo runing Short",
+    "preco": 50.0,
+    "link": "../../../assets/roupa2.svg"
+  },
+  {
+    "name": "Roupa de frio",
+    "preco": 50.0,
+    "link": "../../../assets/Roupa3.png"
+  },
+  {
+    "name": "Roupa de frio",
+    "preco": 50.0,
+    "link": "../../../assets/roupa1.png"
+  },
+  {
+    "name": "Apollo runing Short",
+    "preco": 50.0,
+    "link": "../../../assets/roupa2.svg"
+  },
+  {
+    "name": "Roupa de frio",
+    "preco": 50.0,
+    "link": "../../../assets/Roupa3.png"
+  }
+]

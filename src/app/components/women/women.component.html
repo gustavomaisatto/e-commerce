@@ -1,0 +1,15 @@
+<main>
+  <p id="title">Categoria feminina</p>
+  <div id="items-container">
+    <div class="item" *ngFor="let item of arrayItems">
+      <img src="{{ item.link }}" alt="{{ item.name }}" />
+      <button (click)="olamundo()">
+        <img id="cartgreen" src="../../../assets/cartGreen.svg" alt="" />
+      </button>
+      <p class="title-text">
+        {{ item.name }}
+      </p>
+      <p class="price-item">${{ item.preco | number : "1.2-2" }}</p>
+    </div>
+  </div>
+</main>

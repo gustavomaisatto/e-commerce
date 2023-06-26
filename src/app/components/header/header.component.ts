@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  listNav: string[] = ['Women', 'Men', 'Kids'];
+  listNav: string[] = ['women', 'men', 'kids'];
+  selectedLink: string = '';
   safeReturnUrl: SafeResourceUrl | undefined;
   safeVectorUrl: SafeResourceUrl | undefined;
   safeEmptyCartUrl: SafeResourceUrl | undefined;
@@ -15,7 +17,6 @@ export class HeaderComponent {
     const returnUrl = '../../../assets/return.svg'; // Caminho relativo para a imagem
     const vectorUrl = '../../../assets/Vector.svg'; // Caminho relativo para a imagem
     const cartUrl = '../../../assets/EmptyCart.svg'; // Caminho relativo para a imagem
-
     // Sanitize a URL da imagem
     this.safeReturnUrl =
       this.sanitizer.bypassSecurityTrustResourceUrl(returnUrl);

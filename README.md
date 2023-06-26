@@ -1,4 +1,4 @@
-# MyApp
+# e-commerce de roupas
 
 Esse projeto foi feito com angular com intuito de treinar minhas habilidades.
 

@@ -1,7 +1,9 @@
 <nav>
   <ul>
-    <li *ngFor="let item of listNav">
-      <a class="nav-items" [href]="item">{{ item }}</a>
+    <li *ngFor="let item of listNav; let first = first">
+      <a class="nav-items" routerLink="/{{ item }}" routerLinkActive="active">{{
+        item
+      }}</a>
     </li>
   </ul>
   <a href="#"><img [src]="safeReturnUrl" alt="Retornar a home" /></a>

@@ -3,7 +3,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 100px 0 117px;
 }
 
 ul {
@@ -11,18 +10,28 @@ ul {
   display: flex;
   list-style: none;
 }
-.nav-items:hover {
-  color: var(--c-select);
-  border-bottom: 1px solid var(--c-select);
-  padding-bottom: 10px;
+.nav-items:hover:after {
+  width: 100%;
 }
 .nav-items {
+  transition: 0.5s;
   line-height: 120%;
   font-family: var(--font);
   color: var(--c-text);
   font-weight: 500;
   font-size: 16px;
   text-transform: uppercase;
+}
+.active {
+  border-bottom: 2px solid var(--c-select);
+}
+.nav-items:after {
+  transition: all ease-in-out 0.3s;
+  background: none repeat scroll 0 0 var(--c-select);
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
 }
 a {
   text-decoration: none;
