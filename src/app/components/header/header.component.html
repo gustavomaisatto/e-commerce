@@ -12,6 +12,9 @@
       <h1>$</h1>
       <img [src]="safeVectorUrl" alt="vector" />
     </div>
-    <img class="emptyCart" [src]="safeEmptyCartUrl" alt="empty cart" />
+    <div class="emptyCart">
+      <span id="numberItems">{{ cartItemCount }}</span>
+      <img [src]="safeEmptyCartUrl" alt="Carrinho Vazio" />
+    </div>
   </div>
 </nav>

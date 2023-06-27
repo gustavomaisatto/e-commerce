@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { WomenComponent } from './components/women/women.component';
 
 const routes: Routes = [
-  { path: '', component: WomenComponent },
+  { path: '', redirectTo: '/women', pathMatch: 'full' },
   { path: 'women', component: WomenComponent },
   { path: 'men', component: WomenComponent },
   { path: 'kids', component: WomenComponent },

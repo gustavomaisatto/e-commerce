@@ -1,18 +1,24 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-
+import { ProductsService } from 'src/app/services/products.service';
+import { SelectedLinkService } from 'src/app/services/selected-link.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   listNav: string[] = ['women', 'men', 'kids'];
-  selectedLink: string = '';
   safeReturnUrl: SafeResourceUrl | undefined;
   safeVectorUrl: SafeResourceUrl | undefined;
   safeEmptyCartUrl: SafeResourceUrl | undefined;
-  constructor(private sanitizer: DomSanitizer) {}
+  listProducts: any[] = [];
+  cartItemCount: number = 0;
+  constructor(
+    private sanitizer: DomSanitizer,
+    private products: ProductsService,
+    private selectedLinkService: SelectedLinkService
+  ) {}
   ngOnInit(): void {
     const returnUrl = '../../../assets/return.svg'; // Caminho relativo para a imagem
     const vectorUrl = '../../../assets/Vector.svg'; // Caminho relativo para a imagem
@@ -24,5 +30,8 @@ export class HeaderComponent {
       this.sanitizer.bypassSecurityTrustResourceUrl(vectorUrl);
     this.safeEmptyCartUrl =
       this.sanitizer.bypassSecurityTrustResourceUrl(cartUrl);
+    this.products.cartItemsUpdated.subscribe((items) => {
+      this.cartItemCount = items.length;
+    });
   }
 }

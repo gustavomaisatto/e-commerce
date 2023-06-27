@@ -1,9 +1,9 @@
 <main>
-  <p id="title">Categoria feminina</p>
+  <p id="title">Categoria {{ activeRoute }}</p>
   <div id="items-container">
     <div class="item" *ngFor="let item of productsItems">
       <img src="{{ item.link }}" alt="{{ item.name }}" />
-      <button (click)="olamundo()">
+      <button (click)="addToCart(item)">
         <img id="cartgreen" src="../../../assets/cartGreen.svg" alt="" />
       </button>
       <p class="title-text">
