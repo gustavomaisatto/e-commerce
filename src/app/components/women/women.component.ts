@@ -1,5 +1,7 @@
+import { ProductsService } from './../../services/products.service';
 import { Component } from '@angular/core';
 interface roupa {
+  id: number;
   name: string;
   preco: number;
   link: string;
@@ -10,40 +12,23 @@ interface roupa {
   styleUrls: ['./women.component.css'],
 })
 export class WomenComponent {
-  arrayItems: roupa[] = [
-    {
-      name: 'Roupa de frio',
-      preco: 50.0,
-      link: '../../../assets/roupa1.png',
-    },
-    {
-      name: 'Apollo runing Short',
-      preco: 50.0,
-      link: '../../../assets/roupa2.svg',
-    },
-    {
-      name: 'Roupa de frio',
-      preco: 50.0,
-      link: '../../../assets/Roupa3.png',
-    },
-    {
-      name: 'Roupa de frio',
-      preco: 50.0,
-      link: '../../../assets/roupa1.png',
-    },
-    {
-      name: 'Apollo runing Short',
-      preco: 50.0,
-      link: '../../../assets/roupa2.svg',
-    },
-    {
-      name: 'Roupa de frio',
-      preco: 50.0,
-      link: '../../../assets/Roupa3.png',
-    },
-  ];
-  constructor() {}
+  productsItems: roupa[] = [];
+  constructor(private Products: ProductsService) {}
 
+  ngOnInit(): void {
+    this.Products.getAllProducts().subscribe({
+      next: (res: any) => {
+        this.productsItems = res;
+        console.log(res);
+      },
+      error: (error) => {
+        alert(error);
+      },
+      complete: () => {
+        console.log('request completed.');
+      },
+    });
+  }
   olamundo(): void {
     console.log('ola mundo');
   }
