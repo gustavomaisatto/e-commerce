@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WomenComponent } from './components/women/women.component';
+import { PageComponent } from './components/page/page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/women', pathMatch: 'full' },
-  { path: 'women', component: WomenComponent },
-  { path: 'men', component: WomenComponent },
-  { path: 'kids', component: WomenComponent },
+  { path: 'women', component: PageComponent },
+  { path: 'men', component: PageComponent },
+  { path: 'kids', component: PageComponent },
 ];
 
 @NgModule({

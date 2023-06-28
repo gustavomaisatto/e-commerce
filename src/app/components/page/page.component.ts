@@ -1,4 +1,4 @@
-import { ProductsService } from './../../services/products.service';
+import { ProductsService } from '../../services/products.service';
 import { Component } from '@angular/core';
 import { SelectedLinkService } from 'src/app/services/selected-link.service';
 import { Router } from '@angular/router';
@@ -10,10 +10,10 @@ interface roupa {
 }
 @Component({
   selector: 'app-women',
-  templateUrl: './women.component.html',
-  styleUrls: ['./women.component.css'],
+  templateUrl: './page.component.html',
+  styleUrls: ['./page.component.css'],
 })
-export class WomenComponent {
+export class PageComponent {
   selectedLink: string = 'women';
   productsItems: roupa[] = [];
   currentUrl = this.router.url;
