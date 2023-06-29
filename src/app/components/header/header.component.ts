@@ -9,6 +9,7 @@ import { SelectedLinkService } from 'src/app/services/selected-link.service';
 })
 export class HeaderComponent implements OnInit {
   listNav: string[] = ['women', 'men', 'kids'];
+  openCartBool: boolean = false;
   safeReturnUrl: SafeResourceUrl | undefined;
   safeVectorUrl: SafeResourceUrl | undefined;
   safeEmptyCartUrl: SafeResourceUrl | undefined;
@@ -32,6 +33,10 @@ export class HeaderComponent implements OnInit {
       this.sanitizer.bypassSecurityTrustResourceUrl(cartUrl);
     this.products.cartItemsUpdated.subscribe((items) => {
       this.cartItemCount = items.length;
+      this.listProducts = items;
     });
+  }
+  openCart(): void {
+    this.openCartBool = !this.openCartBool;
   }
 }

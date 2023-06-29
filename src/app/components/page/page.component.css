@@ -3,6 +3,7 @@
   font-family: var(--font);
 }
 main {
+  padding: 0 100px 0 117px;
   display: flex;
   flex-direction: column;
   gap: 50px;

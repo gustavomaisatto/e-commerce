@@ -12,9 +12,18 @@
       <h1>$</h1>
       <img [src]="safeVectorUrl" alt="vector" />
     </div>
-    <div class="emptyCart">
+    <div (click)="openCart()" class="emptyCart">
       <span id="numberItems">{{ cartItemCount }}</span>
       <img [src]="safeEmptyCartUrl" alt="Carrinho Vazio" />
     </div>
+
+    <div *ngIf="openCartBool" id="window-cart">
+      <ul>
+        <li *ngFor="let purchase of listProducts">
+          <h1>{{ purchase.name }}</h1>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
+<div id="background-cart" *ngIf="openCartBool"></div>
